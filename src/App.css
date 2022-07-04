@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: block;
+  height: 5000px;
 }
 
 .App-logo {
@@ -7,6 +9,10 @@
   pointer-events: none;
 }
 .wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   background-color: #0a1c3f;
   padding: 50px;
 }
@@ -28,7 +34,7 @@
   position: relative;
 }
 .headerVideo{
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   height: 100%;
