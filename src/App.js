@@ -1,22 +1,54 @@
 import logo from './atlanta_logo.png';
 import './App.css';
-import vid from '../src/assets/BlackBrushStrokeTransition.mp4';
+import vid from '../src/assets/BlackBrushStrokeTransition1.mp4';
 import {useEffect, useRef} from "react";
+
+function debounce(func, wait, immediate) {
+  let timeout;
+
+  return function executedFunction() {
+    const context = this;
+    const args = arguments;
+
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+
+    const callNow = immediate && !timeout;
+
+    clearTimeout(timeout);
+
+    timeout = setTimeout(later, wait);
+
+    if (callNow) func.apply(context, args);
+  };
+};
 
 
 function App() {
   const videoRef = useRef(null);
+  const onScroll = () => {
+    // console.log('document.body.clientHeight', document.body.clientHeight)
+    const bodyHeight = document.body.clientHeight;
+    const scrollY = Math.ceil(window.scrollY)
+    const videoDuration = videoRef.current.duration % 60;
+    const maxScrollYValue = bodyHeight - window.innerHeight
+    const videoTimeStamp = scrollY * videoDuration / maxScrollYValue
+
+    videoRef.current.currentTime = videoTimeStamp
+    // console.log('scrollY', scrollY)
+    console.log('videoTimeStamp', videoTimeStamp)
+  };
 
   useEffect(() => {
-    videoRef.current.pause()
-    const onScroll = () => {
-      videoRef.current.pause()
-    };
 
-    setInterval(function(){
-      videoRef.current.currentTime = Math.ceil(window.scrollY)/900;
-    }, 20);
-    window.addEventListener('scroll', onScroll, { passive: true });
+    // videoRef.current.pause()
+
+    // setInterval(function(){
+    //   videoRef.current.currentTime = Math.ceil(window.scrollY)/900;
+    // }, 10);
+    window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return (
