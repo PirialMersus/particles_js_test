@@ -38,7 +38,7 @@ function App() {
 
     videoRef.current.currentTime = videoTimeStamp
     // console.log('scrollY', scrollY)
-    console.log('videoTimeStamp', videoTimeStamp)
+    console.log('scrollY', scrollY)
   };
 
   useEffect(() => {
