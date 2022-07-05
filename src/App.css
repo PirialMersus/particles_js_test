@@ -15,6 +15,15 @@
   transform: translate(-50%,-50%);
   background-color: #0a1c3f;
   padding: 50px;
+  transition: all 0.3s ease;
+}
+.wrap.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.wrap.invisible {
+  opacity: 0;
+  visibility: hidden;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -44,6 +53,12 @@
   -o-object-fit: cover;
   object-fit: cover;
   z-index: -1;
+}
+.displayNone {
+  display: none;
+}
+.displayBlock {
+  display: block;
 }
 
 .App-link {

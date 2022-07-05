@@ -1,7 +1,8 @@
 import logo from './atlanta_logo.png';
 import './App.css';
-import vid from '../src/assets/BlackBrushStrokeTransition1.mp4';
-import {useEffect, useRef} from "react";
+import vid from '../src/assets/brushStroke2.mp4';
+import vidForGreetings from '../src/assets/brushStroke3forDownload.mp4';
+import {useEffect, useRef, useState} from "react";
 
 function debounce(func, wait, immediate) {
   let timeout;
@@ -28,6 +29,8 @@ function debounce(func, wait, immediate) {
 
 function App() {
   const videoRef = useRef(null);
+  const [backgroundVideoVisibility, setBackgroundVideoVisibility] = useState('invisible')
+  const [contentVisibility, setContentVisibility] = useState('invisible')
   const onScroll = () => {
     // console.log('document.body.clientHeight', document.body.clientHeight)
     const bodyHeight = document.body.clientHeight;
@@ -40,6 +43,15 @@ function App() {
     // console.log('scrollY', scrollY)
     console.log('scrollY', scrollY)
   };
+  useEffect(() => {
+    setTimeout(() => {
+      setBackgroundVideoVisibility('visible')
+    }, 5000)
+    setTimeout(() => {
+      setContentVisibility('visible')
+    }, 3000)
+  }, []);
+
 
   useEffect(() => {
 
@@ -57,13 +69,22 @@ function App() {
         <video
           ref={videoRef}
           preload="auto"
+          autoPlay
+          loop={false}
+          muted
+          playsInline
+          src={vidForGreetings}
+          className={`headerVideo ${backgroundVideoVisibility === 'visible' ? 'displayNone' : 'displayBlock' }`}/>
+        <video
+          ref={videoRef}
+          preload="auto"
           autoPlay={false}
           loop
           muted
           playsInline
           src={vid}
-          className="headerVideo"/>
-        <div className='wrap'>
+          className={`headerVideo ${backgroundVideoVisibility === 'visible' ? 'displayBlock' : 'displayNone' }`}/>
+        <div className={`wrap ${contentVisibility === 'visible' ? 'displayBlock' : 'invisible'}`}>
           <img src={logo} className="App-logo" alt="logo"/>
           <p>
             Atlanta
