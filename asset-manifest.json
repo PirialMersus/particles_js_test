@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/particles_js_test/static/css/main.ed96293c.css",
-    "main.js": "/particles_js_test/static/js/main.49a57760.js",
+    "main.css": "/particles_js_test/static/css/main.578e54b7.css",
+    "main.js": "/particles_js_test/static/js/main.76718221.js",
     "static/js/787.6f4d752a.chunk.js": "/particles_js_test/static/js/787.6f4d752a.chunk.js",
-    "static/media/BlackBrushStrokeTransition1.mp4": "/particles_js_test/static/media/BlackBrushStrokeTransition1.8f91d0064b9899705b2f.mp4",
+    "static/media/brushStroke3forDownload.mp4": "/particles_js_test/static/media/brushStroke3forDownload.3168780a92c40995df6a.mp4",
+    "static/media/brushStroke2.mp4": "/particles_js_test/static/media/brushStroke2.31fecaafed91864087ff.mp4",
     "index.html": "/particles_js_test/index.html",
-    "main.ed96293c.css.map": "/particles_js_test/static/css/main.ed96293c.css.map",
-    "main.49a57760.js.map": "/particles_js_test/static/js/main.49a57760.js.map",
+    "main.578e54b7.css.map": "/particles_js_test/static/css/main.578e54b7.css.map",
+    "main.76718221.js.map": "/particles_js_test/static/js/main.76718221.js.map",
     "787.6f4d752a.chunk.js.map": "/particles_js_test/static/js/787.6f4d752a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed96293c.css",
-    "static/js/main.49a57760.js"
+    "static/css/main.578e54b7.css",
+    "static/js/main.76718221.js"
   ]
 }
